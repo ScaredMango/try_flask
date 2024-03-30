@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% block title %} Добавить новость  {% endblock title %}
+
+{% block content %}
+<!--TO DO ЗДЕСЬ БУДЕТ ФОРМА-->
+
+<form method='POST' action="" novalidate>
+    {{form.csrf_token}}
+    <div class="form-group">
+        <h1>Добавить новость</h1>
+        <label>{{form.title.label}}</label>
+        {{form.title(class='form-control')}}
+    </div>
+    <div class="form-group">
+        <label>{{form.text.label}}</label>
+        {{form.text(class='form-control')}}
+    </div>
+    <div class="form-group">
+        <label>{{form.category.label}}</label>
+        {{form.category(class='form-control')}}
+    </div>
+    {{form.submit(class="btn btn-primary btn-lg")}}
+</form>
+{% endblock content %}
